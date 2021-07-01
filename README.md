@@ -1,5 +1,5 @@
 # leds-with-microcontroller
-![image](https://user-images.githubusercontent.com/63459021/124104690-32965180-da6b-11eb-8955-8d2f1ed160d9.png)
+![image](https://user-images.githubusercontent.com/63459021/124109885-4a240900-da70-11eb-9213-0f9ccec2e010.png)
 First, the move button should be made functional by pressing the on off button. \
 When the D3 led lights up, it is understood that the move button has become functional. \
 D3 button will turn off automatically after a while. This does not disable the move button.
