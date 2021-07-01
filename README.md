@@ -8,3 +8,6 @@ When the move button is pressed, the d4 d5 d6 d7 d8 d9 leds turn on in a loop.
 
 Each time the direction button is pressed, \
 the LED flashing order changes direction from right to left or from left to right.
+
+In order not to increase the complexity of the screenshot, \
+it is not included in the simulation, but do not forget to connect a series resistor to the LEDs.
