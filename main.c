@@ -1,3 +1,11 @@
+/*
+ * File:   main.c
+ * Author: can
+ *
+ * Created on 10 ?ubat 2021 Çar?amba, 15:14
+ */
+
+
 #include <xc.h>
 
 #pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator)
@@ -11,11 +19,10 @@ enum {energyOFF, energyON};
 enum {LEFT, RIGHT};
 int energy = energyOFF;
 int direction = LEFT;
-int LEDNumber = 0;
-int LEDS[] = {0x80, 0x40, 0x20, 0x10, 0x08, 0x04}; 
+unsigned char LEDNumber = 4;
 
 void flashLED(LEDNumber){
-    PORTB = LEDS[LEDNumber];
+    PORTB = LEDNumber;
     __delay_ms(250);
 }
 
@@ -45,12 +52,12 @@ void main(void) {
             while(energy == energyON){
                 flashLED(LEDNumber); 
                 if (direction == LEFT){
-                    LEDNumber += 1;
-                    LEDNumber %= 6;
+                    LEDNumber <<= 1;
+                    if (LEDNumber == 0)LEDNumber = 4;
                 }
                 if (direction == RIGHT){
-                    LEDNumber += 5;
-                    LEDNumber %= 6;                    
+                    LEDNumber >>= 1;
+                    if (LEDNumber == 2)LEDNumber = 128;                
                 }
                 if (RA0 == 1){
                     break;
