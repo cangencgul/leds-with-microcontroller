@@ -26,7 +26,7 @@ void main(void) {
     PORTB = 0x00;
     energy = energyOFF;
     while(1){
-        if (RA0 = 1){
+        if (RA0 == 1){
             if (energy == energyOFF){
                 energy = energyON; 
                 PORTB = 0x02;
